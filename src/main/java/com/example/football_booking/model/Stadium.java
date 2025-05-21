@@ -24,15 +24,11 @@ public class Stadium {
     private String facilities; // Các tiện nghi của sân, ví dụ: "Wifi, giữ xe, nước uống"
     private BigDecimal pricePerHour; // Giá thuê sân mỗi giờ
 
-    @Column(name = "opening_time") // Ánh xạ với cột 'opening_time' trong bảng
-    private Time openingTime; // Thời gian mở cửa
+    @Column(name = "opening_time")
+    private Time openingTime; 
 
-    @Column(name = "closing_time") // Ánh xạ với cột 'closing_time' trong bảng
-    private Time closingTime; // Thời gian đóng cửa
-
-    // Constructors (Bạn có thể thêm constructors nếu cần, Lombok có thể tạo tự động)
-    // Ví dụ: public Stadium() {}
-    // Ví dụ: public Stadium(String name, String address, ...) {}
+    @Column(name = "closing_time")
+    private Time closingTime; 
 
     // Getters and Setters (Lombok có thể tạo tự động thông qua @Data hoặc @Getter/@Setter)
     public Long getId() {

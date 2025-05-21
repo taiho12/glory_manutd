@@ -16,7 +16,7 @@ public class UserController {
     @Autowired // Tự động inject UserService
     private UserService userService;
 
-    // Endpoint để lấy tất cả người dùng (chỉ admin mới có thể truy cập trong cấu hình Security)
+
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = userService.getAllUsers();
@@ -34,7 +34,7 @@ public class UserController {
         }
     }
 
-    // Endpoint để đăng ký người dùng mới (permitAll trong SecurityConfig)
+
     @PostMapping("/register")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User createdUser = userService.createUser(user);
@@ -59,6 +59,4 @@ public class UserController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    // Bạn có thể thêm các endpoint khác liên quan đến logic người dùng tại đây,
-    // ví dụ: /login (sẽ được xử lý bởi Spring Security), /profile, /history, v.v.
 }

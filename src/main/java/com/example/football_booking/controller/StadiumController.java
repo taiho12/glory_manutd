@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@RestController // Đánh dấu đây là một Spring REST Controller
-@RequestMapping("/api/stadiums") // Định nghĩa đường dẫn cơ sở cho các API liên quan đến sân bóng
+@RestController
+@RequestMapping("/api/stadiums")
 public class StadiumController {
 
     @Autowired // Tự động inject StadiumService
@@ -34,7 +34,6 @@ public class StadiumController {
         }
     }
 
-    // Endpoint để tạo sân bóng mới (chỉ admin mới có thể truy cập trong cấu hình Security)
     @PostMapping
     public ResponseEntity<Stadium> createStadium(@RequestBody Stadium stadium) {
         Stadium createdStadium = stadiumService.createStadium(stadium);
@@ -59,6 +58,4 @@ public class StadiumController {
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
-    // Bạn có thể thêm các endpoint khác liên quan đến quản lý sân bóng tại đây,
-    // ví dụ: /available (tìm sân trống), /schedule (lịch trình sân), v.v.
 }

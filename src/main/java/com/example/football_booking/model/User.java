@@ -2,7 +2,7 @@ package com.example.football_booking.model;
 
 import jakarta.persistence.*;
 
-@Entity // Đánh dấu đây là một JPA Entity, ánh xạ với một bảng trong cơ sở dữ liệu
+@Entity 
 @Table(name = "users") // Tên bảng trong cơ sở dữ liệu
 public class User {
 
@@ -15,8 +15,6 @@ public class User {
     private String password; // Mật khẩu (nên được mã hóa trước khi lưu vào database)
     private String phone;
     private String role; // Vai trò của người dùng, ví dụ: "customer", "admin"
-
-    // Constructors (Bạn có thể thêm constructors nếu cần)
 
     // Getters and Setters
     public Long getId() {

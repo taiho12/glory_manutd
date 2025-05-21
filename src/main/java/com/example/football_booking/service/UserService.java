@@ -3,7 +3,7 @@ package com.example.football_booking.service;
 import com.example.football_booking.model.User;
 import com.example.football_booking.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.password.PasswordEncoder; // Import này cần thiết để mã hóa mật khẩu
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
@@ -43,9 +43,6 @@ public class UserService {
             existingUser.setEmail(user.getEmail());
             existingUser.setPhone(user.getPhone());
             existingUser.setRole(user.getRole());
-            // Cẩn thận: Không cập nhật mật khẩu ở đây trực tiếp.
-            // Nếu muốn đổi mật khẩu, cần có một phương thức riêng biệt
-            // để xử lý việc mã hóa mật khẩu mới.
             return userRepository.save(existingUser);
         } else {
             return null; // Hoặc bạn có thể throw một ngoại lệ (Exception)
@@ -62,6 +59,4 @@ public class UserService {
         return userRepository.findByEmail(email);
     }
 
-    // Bạn có thể thêm các phương thức khác liên quan đến logic người dùng tại đây,
-    // ví dụ: xác thực đăng nhập, đổi mật khẩu, v.v.
 }
