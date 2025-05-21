@@ -1,0 +1,80 @@
+# Maven
+/target/
+pom.xml.tag
+pom.xml.next
+pom.xml.bak
+release.properties
+release-versions.properties
+*.mvn
+!/.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata
+target/
+!.apt_generated/
+!.factorypath
+!.springBeans
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# VS Code
+.vscode/
+.history/
+
+# Spring Boot
+/target/
+/build/
+*.log
+*.zip
+*.tar.gz
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iml
+*.ipr
+*.iws
+out/
+
+### Mac ###
+.DS_Store
+.AppleDouble
+.LSOverride
+
+### Linux ###
+*.swp
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Log files
+*.log
+logs/
+
+# Environment variables
+.env
+.env.*
+
+# Specific to Spring Boot
+/src/main/resources/application*.properties
+/src/main/resources/application*.yml
