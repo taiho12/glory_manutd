@@ -25,7 +25,7 @@ public class Stadium {
     private BigDecimal pricePerHour; // Giá thuê sân mỗi giờ
 
     @Column(name = "opening_time")
-    private Time openingTime; 
+    private Time openingTime;
 
     @Column(name = "closing_time")
     private Time closingTime; 
