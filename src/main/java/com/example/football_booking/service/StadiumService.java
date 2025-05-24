@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service // Đánh dấu đây là một Spring Service
+@Service
 public class StadiumService {
 
     // Tự động inject StadiumRepository
@@ -55,6 +55,5 @@ public class StadiumService {
     public void deleteStadium(Long id) {
         stadiumRepository.deleteById(id);
     }
-
 
 }

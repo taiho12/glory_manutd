@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.sql.Time;
 
-@Entity // Đánh dấu đây là một JPA Entity, ánh xạ với một bảng trong cơ sở dữ liệu
+@Entity
 @Table(name = "stadiums") // Tên bảng trong cơ sở dữ liệu
 public class Stadium {
 

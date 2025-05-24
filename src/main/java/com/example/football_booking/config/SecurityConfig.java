@@ -26,10 +26,11 @@ public class SecurityConfig {
             .authorizeHttpRequests(authorize -> authorize
                 .requestMatchers(
                     new AntPathRequestMatcher("/api/users/register"),
+                    new AntPathRequestMatcher("/api/users"),
                     new AntPathRequestMatcher("/api/users/login"),
-                    new AntPathRequestMatcher("/h2-console/**")
+                    new AntPathRequestMatcher("/h2-console/**"),
+                    new AntPathRequestMatcher("/api/stadiums/**")
                 ).permitAll()
-                .requestMatchers(new AntPathRequestMatcher("/api/stadiums/**")).hasRole("ADMIN")
                 .anyRequest().authenticated()
             )
             .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.sameOrigin()));
@@ -37,3 +38,4 @@ public class SecurityConfig {
         return http.build();
     }
 }
+ 
