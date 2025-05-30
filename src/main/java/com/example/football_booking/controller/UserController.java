@@ -2,7 +2,6 @@ package com.example.football_booking.controller;
 
 import com.example.football_booking.model.User;
 import com.example.football_booking.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +12,12 @@ import java.util.Optional;
 @RequestMapping("/api/users") // Định nghĩa đường dẫn cơ sở cho các API liên quan đến người dùng
 public class UserController {
 
-    @Autowired // Tự động inject UserService
-    private UserService userService;
+    // Tự động inject UserService
+    private final UserService userService;
+
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
 
 
     @GetMapping

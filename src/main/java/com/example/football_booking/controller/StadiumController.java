@@ -2,7 +2,6 @@ package com.example.football_booking.controller;
 
 import com.example.football_booking.model.Stadium;
 import com.example.football_booking.service.StadiumService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,8 +12,12 @@ import java.util.Optional;
 @RequestMapping("/api/stadiums")
 public class StadiumController {
 
-    @Autowired // Tự động inject StadiumService
-    private StadiumService stadiumService;
+    // Tự động inject StadiumService
+    private final StadiumService stadiumService;
+
+    public StadiumController(StadiumService stadiumService) {
+        this.stadiumService = stadiumService;
+    }
 
     // Endpoint để lấy tất cả sân bóng
     @GetMapping
